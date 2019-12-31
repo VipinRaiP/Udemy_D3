@@ -6,7 +6,7 @@
 
 d3.tsv("data/ages.tsv").then(function(data){
     data.forEach(function(d){
-        d.age = +d.age;
+        d.age = +d.age; //convert to integer
     });
 
     var svg = d3.select("#chart-area").append("svg")
@@ -33,7 +33,10 @@ d3.tsv("data/ages.tsv").then(function(data){
                 else {
                     return "red";
                 }
-            });
+            });*/
+            console.log(data);
+
+
 }).catch(function(error){
     console.log(error);
 })

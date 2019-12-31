@@ -11,15 +11,14 @@ var svg = d3.select("#chart-area")
     .attr("height", "400");
 
 d3.json("data/buildings.json").then(function(data){
-    console.log(data);
 
     data.forEach(function(d) {
         d.height = +d.height;
     });
 
     var x = d3.scaleBand()
-        .domain(["Burj Khalifa", "Shanghai Tower", 
-            "Abraj Al-Bait Clock Tower", "Ping An Finance Centre", 
+        .domain(["Burj Khalifa", "Shanghai Tower",
+            "Abraj Al-Bait Clock Tower", "Ping An Finance Centre",
             "Lotte World Tower", "One World Trade Center",
             "Guangzhou CTF Finance Center"])
         .range([0, 400])
@@ -30,9 +29,10 @@ d3.json("data/buildings.json").then(function(data){
         .domain([0, 828])
         .range([0, 400]);
 
+
     var rects = svg.selectAll("rect")
             .data(data)
-        .enter()
+            .enter()
             .append("rect")
             .attr("y", 0)
             .attr("x", function(d){

@@ -19,7 +19,7 @@ circles.enter()
             return (i * 50) + 25;
         })
         .attr("cy", 25)
-        .attr("r", function(d){
+        .attr("r",function(d){
             return d;
         })
         .attr("fill", "red");
